@@ -25,6 +25,10 @@ const LoginPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if ((!users.username || !users.password)) {
+      alert('Please enter all information!');
+      return;
+    }
 
 
     console.log('Login Data:', users);

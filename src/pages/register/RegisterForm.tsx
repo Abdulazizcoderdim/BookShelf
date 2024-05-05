@@ -13,7 +13,7 @@ const RegisterForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!username || !email || !password) {
-      alert('Please fill out all fields');
+      alert('Please enter all information');
       return;
     }
     console.log('Registration Data:', { username, email, password });

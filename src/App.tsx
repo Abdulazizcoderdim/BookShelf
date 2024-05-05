@@ -1,8 +1,7 @@
 import Header from "./pages/Header";
 
-
 const App = () => {
-  
+
 
   return (
     <div>
