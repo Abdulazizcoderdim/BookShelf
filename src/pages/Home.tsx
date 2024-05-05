@@ -1,11 +1,9 @@
 import { Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import './Header.css'
-import AllBooks from "./AllBooks";
 
-const Header = () => {
+const Home = () => {
   return (
-    <>
     <div className="header">
       <Container
         sx={{
@@ -24,35 +22,20 @@ const Header = () => {
           >
             Home
           </Link>
-
-
-          <Button variant="contained">
-            <Link
-              style={{ textDecoration: "none", color: "white", }}
-              to={"/login"}
-            >
-              Login
-            </Link>
-          </Button>
-          <Button variant="contained">
-            <Link
-              style={{ textDecoration: "none", color: "white", }}
-              to={"/register"}
-            >
-              Register
-            </Link>
-          </Button>
-
           
+         <Button variant="contained">
+          <Link
+            style={{ textDecoration: "none", color: "white", }}
+            to={"/"}
+          >
+            Logout
+          </Link>
+         </Button> 
+
         </div>
       </Container>
     </div>
-    <Container>
-      <AllBooks/>
-    </Container>
-    </>
-
   );
 };
 
-export default Header;
+export default Home;

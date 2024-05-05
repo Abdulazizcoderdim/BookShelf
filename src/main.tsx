@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Header from './pages/Header.tsx';
 import App from './App.tsx';
 import BooksShelf from './pages/BooksShelf.tsx';
 import RegisterPage from './pages/register/RegisterPage.tsx';
 import LoginPage from './pages/login/LoginPage.tsx';
+import Home from './pages/Home.tsx';
 
 
 const router = createBrowserRouter([
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <div><Header/><BooksShelf/></div>
+    element: <div><Home/><BooksShelf/></div>
   },
   {
     path: "/login",
