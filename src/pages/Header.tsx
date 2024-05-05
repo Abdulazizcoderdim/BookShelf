@@ -14,7 +14,7 @@ const Header = () => {
           paddingBottom: "10px",
         }}
       >
-        <h1 className="header__title">BookShelf</h1>
+        <Link to={"/"} className="header__title">BookShelf</Link>
         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
           <Link
             className="header__home"
@@ -22,6 +22,8 @@ const Header = () => {
           >
             Home
           </Link>
+
+
           <Button variant="contained">
             <Link
               style={{ textDecoration: "none", color: "white", }}
@@ -30,6 +32,16 @@ const Header = () => {
               Login
             </Link>
           </Button>
+          <Button variant="contained">
+            <Link
+              style={{ textDecoration: "none", color: "white", }}
+              to={"/register"}
+            >
+              Register
+            </Link>
+          </Button>
+
+          
         </div>
       </Container>
     </div>

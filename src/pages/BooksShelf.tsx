@@ -9,6 +9,7 @@ interface Book {
   title: string;
   author: string;
   year: number;
+  image: string | null;
   deleteBook?: React.ReactNode;
 }
 
@@ -25,7 +26,7 @@ const BooksShelf = () => {
   }, []);
 
   const handleAddBook = (newBook: Book) => {
-    const updatedBooks = [...books, newBook];
+    const updatedBooks = [ newBook,...books];
     setBooks(updatedBooks);
     localStorage.setItem("books", JSON.stringify(updatedBooks));
   };
@@ -70,8 +71,8 @@ const BooksShelf = () => {
   };
 
   return (
-    <Container className="bookShelf__main" sx={{display: "flex",}}>
-      <AddBookForm onAddBook={handleAddBook} />
+    <Container className="bookShelf__main" sx={{ display: "flex" }}>
+      <AddBookForm onAddBook={handleAddBook}/>
       <div className="bookShelf">
         <h2>Books</h2>
         <div className="bookShelf__books">
@@ -79,47 +80,64 @@ const BooksShelf = () => {
             <div key={book.id} className="bookShelf__book">
               {editingBookId === book.id ? (
                 <div>
+                  <div className="bookShelf__img_div">
+                  {book.image && <img src={book.image} className="bookShelf__img" alt="Book cover"  />} 
+                  </div>
                   <Input
                     type="text"
                     name="title"
                     value={editedBook?.title}
                     onChange={handleInputChange}
+                    placeholder="Change title"
                   />
                   <Input
                     type="text"
                     name="author"
                     value={editedBook?.author}
                     onChange={handleInputChange}
+                    placeholder="Change author"
                   />
                   <Input
                     type="text"
                     name="year"
                     value={editedBook?.year}
                     onChange={handleInputChange}
+                    placeholder="Change published year"
                   />
+                  <div style={{display: "flex", marginTop:"20px", alignItems: "center", justifyContent: "space-between"}}>
                   <Button variant="contained" onClick={handleCancelEdit}>
                     Cancel
                   </Button>
                   <Button variant="contained" onClick={handleSaveEdit}>
                     Save
                   </Button>
+                  </div>
                 </div>
               ) : (
                 <div className="bookShelf__book1">
-                  {book.title} by {book.author}
-                  <Button
-                    variant="outlined"
-                    onClick={() => handleEditBook(book.id)}
-                  >
-                    <Edit />
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    style={{ cursor: "pointer" }}
-                    onClick={() => handleDeleteBook(book.id)}
-                  >
-                    <Delete />
-                  </Button>
+                  <div className="bookShelf__img_div">
+                  {book.image && <img src={book.image} className="bookShelf__img" alt="Book cover"  />}
+                  </div>
+                  <div className="bookShelf__book__text">
+                    <h2><span style={{fontWeight: 700, fontFamily: "cursive"}}>Title: </span>{book.title}</h2>
+                    <h2><span style={{fontWeight: 700, fontFamily: "cursive"}}>Author: </span> {book.author}</h2>
+                    <h2><span style={{fontWeight: 700, fontFamily: "cursive"}}>Published: </span>{book.year}</h2>
+                  </div>
+                  <div className="bookShelf__book2">
+                    <Button
+                      variant="outlined"
+                      onClick={() => handleEditBook(book.id)}
+                    >
+                      <Edit />
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => handleDeleteBook(book.id)}
+                    >
+                      <Delete />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>
