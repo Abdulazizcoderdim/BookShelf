@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Delete, Edit } from "@mui/icons-material";
 import { Button, Container, Input } from "@mui/material";
 import AddBookForm from "../components/AddBook";
+import './BookShelf.css'
 
 interface Book {
   id: string;
@@ -111,7 +112,7 @@ const BooksShelf = () => {
                 </Button>
                 <Button
                   variant="outlined"
-                  style={{ marginLeft: "10px", cursor: "pointer" }}
+                  style={{ cursor: "pointer" }}
                   onClick={() => handleDeleteBook(book.id)}
                 >
                   <Delete />
