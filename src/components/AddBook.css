@@ -1,0 +1,36 @@
+.add-book{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    width: 50%;
+
+}
+
+.add-book__title{
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.add-book__form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.add-book__button{
+    width: 20%;
+}
+
+@media (max-width: 1093px) {
+    .add-book__button{
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .add-book{
+        width: 100%;
+    }
+}

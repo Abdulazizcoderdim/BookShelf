@@ -1,34 +1,31 @@
 import { Button, Container } from "@mui/material";
 import { Link } from "react-router-dom";
+import './Header.css'
 
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       <Container
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "10px",
+          paddingTop: "10px",
+          paddingBottom: "10px",
         }}
       >
-        <h1>BookShelf</h1>
+        <h1 className="header__title">BookShelf</h1>
         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-          <Button variant="outlined">
           <Link
-            style={{
-              textDecoration: "none",
-              color: "black",
-            }}
+            className="header__home"
             to={"/home"}
           >
             Home
           </Link>
-          </Button>
           <Button variant="contained">
             <Link
-              style={{ textDecoration: "none", color: "white" }}
-              to={"/home"}
+              style={{ textDecoration: "none", color: "white", }}
+              to={"/login"}
             >
               Login
             </Link>

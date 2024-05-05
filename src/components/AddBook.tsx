@@ -1,5 +1,6 @@
 import { Input, Button } from '@mui/material';
 import React, { useState } from 'react';
+import './AddBook.css'
 
 interface Book {
     id: string;
@@ -35,9 +36,9 @@ const AddBookForm = ({ onAddBook }: { onAddBook: (book: Book) => void}) => {
   };
 
   return (
-    <div>
-      <h2>Add New Book</h2>
-      <form onSubmit={handleSubmit}>
+    <div className='add-book'>
+      <h2 className='add-book__title'>Add New Book</h2>
+      <form className='add-book__form' onSubmit={handleSubmit}>
         <div>
           <h3>Title:</h3>
           <Input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -51,7 +52,7 @@ const AddBookForm = ({ onAddBook }: { onAddBook: (book: Book) => void}) => {
           <Input type="text" value={year} onChange={(e) => setYear(e.target.value)} />
         </div>
         
-        <Button variant="contained" type="submit">Add Book</Button>
+        <Button className='add-book__button' variant="contained" type="submit">Add Book</Button>
       </form>
     </div>
   );

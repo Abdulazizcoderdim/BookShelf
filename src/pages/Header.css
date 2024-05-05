@@ -1,0 +1,28 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.header__title{
+    color: blue;
+}
+
+.header__home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid blue;
+    border-radius: 5px;
+    color: blue;
+    padding: 8px 10px;
+    transition: all .30s ease;
+}
+
+.header__home:active{
+    background: #f3f2f2;
+    color: blue;
+    transition: all .30s ease;
+}
