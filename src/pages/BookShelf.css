@@ -1,0 +1,33 @@
+.bookShelf{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.bookShelf__books{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.bookShelf__book{
+    padding: 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+}
+
+@media (max-width: 694px) {
+    .bookShelf__main{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
