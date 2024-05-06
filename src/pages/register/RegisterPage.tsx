@@ -1,12 +1,14 @@
 import RegisterForm from "./RegisterForm";
-
+import './RegisterPage.css'
 
 const RegisterPage: React.FC = () => {
 
   return (
-    <div>
-      <h1>Register Page</h1>
-      <RegisterForm />
+    <div className="register">
+      <div className="register-form">
+       <h1>Register</h1>
+       <RegisterForm />
+      </div>
     </div>
   );
 };

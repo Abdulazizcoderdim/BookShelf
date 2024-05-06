@@ -1,0 +1,29 @@
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    background: rgb(242, 241, 241);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.register__form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.register__input{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}

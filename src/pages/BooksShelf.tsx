@@ -77,9 +77,9 @@ const BooksShelf = () => {
       <AddBookForm onAddBook={handleAddBook}/>
       <div className="bookShelf">
         <h2>Books</h2>
-        <div className="bookShelf__books">
+        <div  className="bookShelf__books">
           {books.map((book) => (
-            <div key={book.id} className="bookShelf__book">
+            <div  key={book.id} className="bookShelf__book">
               {editingBookId === book.id ? (
                 <div>
                   <div className="bookShelf__img_div">

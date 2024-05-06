@@ -18,12 +18,7 @@ const Header = () => {
       >
         <Link to={"/"} className="header__title">BookShelf</Link>
         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-          <Link
-            className="header__home"
-            to={"/home"}
-          >
-            Home
-          </Link>
+          
 
 
           <Button variant="contained">
